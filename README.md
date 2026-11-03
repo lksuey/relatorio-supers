@@ -1,5 +1,7 @@
 # Supers report
 
+[![tests](https://github.com/lksuey/relatorio-supers/actions/workflows/tests.yml/badge.svg)](https://github.com/lksuey/relatorio-supers/actions/workflows/tests.yml)
+
 A desktop tool in Python that turns proposal export files into reviewable Excel reports. Each client is counted once, using the identity of the client and the status of their most recent proposal.
 
 The code was extracted from an internal tool and sanitized for publication with the employer's authorization. All data in this repository is synthetic.
