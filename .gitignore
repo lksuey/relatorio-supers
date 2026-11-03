@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+build/
+dist/
+*.spec
+*.xlsx
+*.xlsm
+*.xls
+*.csv
+*.log
+*.db
+*.exe
+Relatórios/
