@@ -49,4 +49,8 @@ The demo generator uses a fixed seed. CPFs in it are algorithmically valid but f
 
 ## Notes
 
+## License
+
+No license file is included. The source is published for portfolio review and no permission to reuse it is granted.
+
 Built with AI assistance; design, domain rules and review by the author.
