@@ -13,3 +13,12 @@ dist/
 *.db
 *.exe
 Relatórios/
+
+.env
+*.env
+.env.*
+!.env.example
+credentials*.json
+*.pem
+*.key
+node_modules/
