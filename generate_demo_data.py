@@ -33,7 +33,6 @@ def generate_rows(n_clients: int = 40) -> list[list[str]]:
     base = datetime(2026, 1, 5, 8, 0)
     rows: list[list[str]] = []
     proposal = 100000
-    # Two distinct clients forced to share the same masked CPF.
     shared_mask = mask_cpf(generate_cpf(rng))
     for i in range(n_clients):
         client_id = f"C{1000 + i}"

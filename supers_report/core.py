@@ -18,8 +18,6 @@ import pandas as pd
 
 Progress = Callable[[float, str], None] | None
 
-# A row is kept only if its "Correspondente" contains one of these (case
-# insensitive). The real list is deployment configuration, not code.
 CORRESPONDENT_KEYWORDS: tuple[str, ...] = ("correspondent",)
 
 STATUS_LABEL = {
@@ -43,7 +41,6 @@ STATUS_LABEL = {
     "corrigido": "CORRIGIDO",
 }
 
-# (needle, singular text, plural text); first match wins, order matters.
 _SUFFIXES = [
     ("não redigitou", "Cliente Não Redigitado", "Clientes Não Redigitados"),
     ("pago", "Cliente Redigitado e está pago", "Clientes Redigitados e estão pagos"),
@@ -70,7 +67,6 @@ _SUFFIXES = [
 
 DATE_FORMATS = ("%d/%m/%Y", "%Y-%m-%d", "%d-%m-%Y", "%d/%m/%y", "%Y/%m/%d")
 
-# A long vendor error text is shortened in the report.
 CANCEL_REASON_LONG = ("AVERBATION FAILURE: monthly interest rate is invalid, "
                       "value must be lower than or equal to the CET rate")
 CANCEL_REASON_SHORT = "AVERBATION FAILURE: CET RATE LIMIT"

@@ -14,8 +14,6 @@ def make_df(rows):
     return pd.DataFrame(rows, columns=cols)
 
 
-# ---- CPF -----------------------------------------------------------------
-
 def test_generated_cpfs_are_valid_and_deterministic():
     a = [generate_cpf(random.Random(1)) for _ in range(3)]
     b = [generate_cpf(random.Random(1)) for _ in range(3)]
@@ -44,8 +42,6 @@ def test_masked_cpf_is_detected_and_not_valid():
     assert is_masked_cpf(masked)
     assert not is_valid_cpf(masked)
 
-
-# ---- grouping / latest record -------------------------------------------
 
 def test_groups_by_client_and_uses_most_recent_proposal():
     df = make_df([
@@ -100,8 +96,6 @@ def test_correspondent_filter_keeps_only_configured_keywords():
     assert kept["ID Cliente"].tolist() == ["C1"]
 
 
-# ---- small helpers --------------------------------------------------------
-
 @pytest.mark.parametrize("raw,expected", [("R$ 1.234,56", 1234.56), ("1,234.56", 1234.56), ("500", 500.0)])
 def test_money_parsing(raw, expected):
     assert core.convert_monetary_to_float(raw) == expected
@@ -115,8 +109,6 @@ def test_suffix_singular_plural():
     assert core.get_suffix_for_status("PAGO", 1).endswith("pago")
     assert core.get_suffix_for_status("PAGO", 2).endswith("pagos")
 
-
-# ---- demo data and end to end -------------------------------------------
 
 def test_demo_data_is_reproducible_and_has_no_real_looking_cpf():
     assert generate_rows() == generate_rows()
